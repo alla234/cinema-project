@@ -16,34 +16,148 @@
   </head>
 <body><!--шапка сайта с классом для стиля-->
   <!--дополнительный класс для размещения в контейнер-->
-  <header class="header container">
-    <a href="/"><!--при нажатии на лого ссылка на главную страницу-->
-       <img src="img/logo.svg" alt="Logo"><!--путь к лого и альтернативный текст-->
-    </a>
-    <nav class="nav"><!--Навигация сайта-->
-      <ul class="menu"><!--Ненумерованный список-->
-        <li class="menu-item"><!--элемент списка. item-пункт-->
-          <a href="#" class="menu-link"> Главная   </a> <!--ссылка(link на меню.#-заглушка -->
-        </li>
-        <li class="menu-item"> <!--элемент списка. item-пункт-->
-          <a href="#" class="menu-link"> Фильмы   </a> <!--ссылка(link на меню.#-заглушка -->
-        </li>
-        <li class="menu-item">   <!--элемент списка. item-пункт-->
-          <a href="#" class="menu-link"> Кинотеатры    </a> <!--ссылка(link на меню.#-заглушка -->
-        </li>
-        <li class="menu-item"> <!--элемент списка. item-пункт-->
-          <a href="#" class="menu-link"> События   </a> <!--ссылка(link на меню.#-заглушка -->
-        </li>
-        <li class="menu-item"> <!--элемент списка. item-пункт-->
-          <a href="#" class="menu-link"> Поддержка   </a> <!--ссылка(link на меню.#-заглушка -->
-        </li>
-      </ul>
-    </nav>
-    <!--Блок с пользователем-->
-       <div class="user">
-         <span class="">Привет, Мила</span><!--Текстовый блок-->
-         <img class="avatar" src="img/avatar.jpg" alt="Мила">
+  <header class="header ">
+    <div class="navbar container"> <!--Навигационна панель-->
+      <a href="/">
+        <!--при нажатии на лого ссылка на главную страницу-->
+        <img src="img/logo.svg" alt="Logo">
+        <!--путь к лого и альтернативный текст-->
+      </a>
+      <nav class="nav">
+        <!--Навигация сайта-->
+        <ul class="menu">
+          <!--Ненумерованный список-->
+          <li class="menu-item">
+            <!--элемент списка. item-пункт-->
+            <a href="#" class="menu-link"> Главная </a>
+            <!--ссылка(link на меню.#-заглушка -->
+          </li>
+          <li class="menu-item">
+            <!--элемент списка. item-пункт-->
+            <a href="#" class="menu-link"> Фильмы </a>
+            <!--ссылка(link на меню.#-заглушка -->
+          </li>
+          <li class="menu-item">
+            <!--элемент списка. item-пункт-->
+            <a href="#" class="menu-link"> Кинотеатры </a>
+            <!--ссылка(link на меню.#-заглушка -->
+          </li>
+          <li class="menu-item">
+            <!--элемент списка. item-пункт-->
+            <a href="#" class="menu-link"> События </a>
+            <!--ссылка(link на меню.#-заглушка -->
+          </li>
+          <li class="menu-item">
+            <!--элемент списка. item-пункт-->
+            <a href="#" class="menu-link"> Поддержка </a>
+            <!--ссылка(link на меню.#-заглушка -->
+          </li>
+        </ul>
+      </nav>
+      <!--Блок с пользователем-->
+      <div class="user">
+        <span class="">Привет, Мила</span>
+        <!--Текстовый блок-->
+        <img class="avatar" src="img/avatar.jpg" alt="Мила">
+      </div>
+    </div>
+    <!-- /.navbar -->
+    <div class="film container">
+    <div class="film-info">
+           <small class="film-title-small" > Avengers: Infinity War </small> <!--маленький подзаголовок фильма-->
+      <h1 class="film-title"> Мстители: война бесконечности </h1> <!--заголовок фильма-->
+      <p class="film-discription">
+        Пока Мстители и их союзники продолжают защищать мир от различных опасностей, с которыми не смог бы справиться один
+        супергерой, новая угроза возникает из космоса: Танос. Межгалактический тиран преследует цель собрать все шесть Камней
+        Бесконечности - артефакты невероятной силы, с помощью которых можно менять реальность по своему желанию. Всё, с чем
+        Мстители сталкивались ранее, вело к этому моменту – судьба Земли никогда ещё не была столь неопределённой.
+       </p> <!--описание фильма-->
+       <div class="film-details"> <!--детали фильма-->
+        <div class="time">
+          <img src="img/clock.svg" alt="clock" class="time-icon"/>
+          <span class="time-counter"> 240 мин.</span>
+        </div>
+        <div class="rating">
+          <img src="img/imdb.png" alt="imdb logo" class="rating-icon">
+          <span class="rating-counter">
+          <strong class="rating-current">9.2</strong>  /10
+          </span>
+        </div>
+
        </div>
+    </div>
+      <!-- /.film-info -->
+      <a href="#" class="film-trailer">
+        <!--вставка картинки из фигмы с помощью svg-->
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="white" />
+          <g clip-path="url(#clip0)">
+            <path
+              d="M43.0758 30.0033C39.3071 27.8416 36.2518 29.6125 36.2518 33.9556V66.0059C36.2518 70.3533 39.3071 72.1219 43.0758 69.9623L71.0893 53.8967C74.8592 51.7342 74.8592 48.2306 71.0893 46.0686L43.0758 30.0033Z"
+              fill="#F20D01" />
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect width="41.8013" height="41.8013" fill="white" transform="translate(34.1837 29.0816)" />
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
+         </div>
+       <!-- /.film -->
+       <div class="session container"> <!--контейнер сеанса-->
+        <div class="session-date">
+          <span class="session-label">Дата</span>
+          <div class="session-date-block">
+            <!--.session-date-item*4>span.session-month+span.session-day+span.session-week-
+              .сессия-дата-пункт*4>период.сессия-месяц + период.сессия-день + период.сессия-неделя-->
+            <div class="session-date-item">
+              <span class="session-month">АПР</span>
+              <span class="session-day"> 27 </span>
+              <span class="session-week"> пт</span>
+            </div>
+            <div class="session-date-item">
+              <span class="session-month">АПР</span>
+              <span class="session-day"> 28 </span>
+              <span class="session-week">сб</span>
+            </div>
+            <div class="session-date-item">
+              <span class="session-month">АПР</span>
+              <span class="session-day">29</span>
+              <span class="session-week">вс</span>
+            </div>
+            <div class="session-date-item">
+              <span class="session-month">АПР</span>
+              <span class="session-day">30 </span>
+              <span class="session-week"> пн</span>
+            </div>
+          </div>
+        </div>
+        <!-- /.date -->
+        <div class="session-cinema">
+          <span class="session-label">Кинотеатр</span>
+          <!--выпадающий список-->
+          <select class="select select-cinema" name="cinema" >
+          <option value="Октябрь, ул. Калужская 28">Октябрь, ул. Калужская 28</option>
+          <option value="IMAX, ул. Ленина 12">IMAX, ул. Ленина 12</option>
+          <option value="Mall, ул. Ленина 12">Mall, ул. Ленина 12</option>
+          </select>
+          
+
+        </div>
+        <!-- /.cinema -->
+        <div class="session-time">
+          <span class="session-label">Время</span>
+          <select class="select" name="cinema">
+            <option value="12:00">12:00</option>
+            <option value="16:30">16:25</option>
+            <option value="17:25">17:25</option>
+          </select>
+        </div>
+        <!-- /.session-time -->
+       </div>
+       <!-- /.session -->
+   <div class="navbar|c"></div>
     </header> 
   </body>
 </html>

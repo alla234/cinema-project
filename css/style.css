@@ -1,12 +1,22 @@
+* {
+  box-sizing: border-box; /*для правильного отображения контента*/
+}
 body {
   background-color: #621402; /*Цвет для всего тела*/
   font-family: "Roboto", sans-serif; /*прописываем шрифт*/
+  color: #fff;
 }
 .container {
   max-width: 1170px; /* мах ширина контейнера для меню */
   margin: auto; /* Контейнер посередине*/
 }
 .header {
+  min-height: 100vh; /*минимальная высота один экран*/
+  background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
+    /*градиент из фигмы*/ url(../img/bg.jpg) no-repeat center top / cover; /*Фоновая картинка.не повторяется.по центру.
+  к верхнему краю.на всю ширину*/
+}
+.navbar /*Навигационная панель*/ {
   display: flex; /*выравнивание в одну строчку шапки*/
   align-items: center; /*Выравнивание по центру*/
   padding-top: 30px; /*Отступ сверху*/
@@ -37,4 +47,118 @@ body {
   height: 33px; /*ширина и высота*/
   border-radius: 50%; /*скругление*/
   margin-left: 11px; /*отодвинуть аватарку от текста*/
+}
+.film {
+  margin-top: 60px; /*отодвинуть описание фильма от навигации */
+  color: #fff;
+}
+.film-title-small {
+  opacity: 0.5; /*задание прозрачности текста (из фигмы)*/
+  font-size: 24px;
+  line-height: 150%; /*Размер шрифта и высота строки*/
+}
+.film-title {
+  font-size: 36px;
+  line-height: 42px;
+  margin-top: 11px;
+  margin-bottom: 23px;
+}
+.film-discription {
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 560px; /*мах ширина блока под текст*/
+}
+.film {
+  display: flex;
+  align-items: center; /*Выравненивание блока фильм по центру*/
+}
+.film-trailer {
+  margin: auto;
+}
+.film-details {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+.time {
+  display: flex;
+  align-items: center; /*Сделать блок время гибким и выровнить картинку и текст по центру*/
+}
+.time-icon {
+  margin-right: 14px; /*отступ текста от иконки вправо*/
+}
+.rating {
+  display: flex;
+  align-items: center;
+  margin-left: 34px;
+}
+.rating-icon {
+  margin-right: 14px;
+}
+.rating-current {
+  font-size: 24px;
+  line-height: 150%;
+}
+.session {
+  margin-top: 62px;
+  padding-top: 46px;
+  padding-bottom: 63px; /*отступы для блока сеанс*/
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /*линия сверху.сплошная.белая-прозрач*/
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); /*линия снизу.сплошная.белая-прозрач*/
+  display: flex; /*элементы в ряд*/
+  justify-content: space-between; /*раскидаем по краям*/
+  align-items: flex-start; /*выравнивание по верхнему краю*/
+}
+.session-label {
+  display: block; /*создание блочного элемента*/
+  margin-bottom: 20px; /*растояние вниз*/
+}
+.session-date-block {
+  display: flex; /*элементы в ряд*/
+}
+.session-date-item {
+  cursor: pointer; /*смена курсора на пальчик*/
+  display: flex;
+  flex-direction: column; /*говорим что они должны располагаться по вертикали*/
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  text-align: center; /*Выравнивание по центру*/
+  width: 90px;
+  height: 90px; /*величина плиток*/
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px; /*растояние между плитками*/
+  transition: background-color 0.2s; /*плавность изменения цвета при наведении*/
+}
+/*Параметры надписей в блоках*/
+.session-month {
+  font-size: 16px;
+  line-height: 19px;
+}
+.session-day {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 35px;
+}
+.session-week {
+  font-size: 19px;
+  line-height: 22px;
+}
+/*при наведении меняет цвет (hover) */
+.session-date-item:hover {
+  background-color: #fe8e05;
+  color: #621402;
+}
+/*Оформление выпадающего списка*/
+.select {
+  background: rgba(255, 255, 255, 0.15); /*фоновый цвет*/
+  border: 1px solid rgba(255, 255, 255, 0.5); /*границы*/
+  border-radius: 5px; /*скругления*/
+  color: #fff;
+  padding: 18px; /*отступ сверху и снизу*/
+  cursor: pointer; /*курсор на пальчик*/
+  margin: 15px;
+}
+.select-cinema {
+  min-width: 470px; /*растянули блок списка кинотеатра*/
 }
