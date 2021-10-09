@@ -1,0 +1,40 @@
+body {
+  background-color: #621402; /*Цвет для всего тела*/
+  font-family: "Roboto", sans-serif; /*прописываем шрифт*/
+}
+.container {
+  max-width: 1170px; /* мах ширина контейнера для меню */
+  margin: auto; /* Контейнер посередине*/
+}
+.header {
+  display: flex; /*выравнивание в одну строчку шапки*/
+  align-items: center; /*Выравнивание по центру*/
+  padding-top: 30px; /*Отступ сверху*/
+  padding-bottom: 30px; /*отступ снизу*/
+}
+.menu {
+  list-style-type: none; /*Сброс точек в списке*/
+  display: flex; /*список-меню выставляется вряд*/
+  margin: 0; /*Отключение отступов*/
+  padding-left: 57px; /*отступ меню от лого*/
+}
+.menu-item {
+  margin-right: 25px; /*растояние между пунктами меню*/
+}
+.menu-link {
+  color: white; /*Ссылки на меню белым шрифтом*/
+  text-decoration: none; /*Отключение подчеркивания ссылок*/
+}
+.user {
+  margin-left: auto; /*поле улетело влево*/
+  color: #fff; /*Текст белым цветом*/
+  /*текст относительно аватарки били на одной линии*/
+  display: flex; /*выравнивание в одну строчку шапки*/
+  align-items: center; /*Выравнивание по центру*/
+}
+.avatar {
+  width: 33px;
+  height: 33px; /*ширина и высота*/
+  border-radius: 50%; /*скругление*/
+  margin-left: 11px; /*отодвинуть аватарку от текста*/
+}
