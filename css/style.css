@@ -162,3 +162,74 @@ body {
 .select-cinema {
   min-width: 470px; /*растянули блок списка кинотеатра*/
 }
+/*стили для блока мест*/
+.scheme {
+  margin-bottom: 20px; /*отступ для блока*/
+  background: rgba(36, 36, 36, 0.18);
+  border-radius: 10px; /*фон и скругления подложки под места*/
+}
+.scheme path:not(.light) /*для всех кроме экрана*/ {
+  fill: rgba(255, 255, 255, 0.2); /*заливка для кресел*/
+}
+.scheme path:not(.light):hover /*Что делать при наведении на этот блок*/ {
+  fill: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.scheme path.booked,
+/*чтобы не светилась когда занята*/
+.scheme path.booked:hover {
+  /*занятые места*/
+  fill: rgba(255, 255, 255, 0.05);
+  cursor: not-allowed;
+}
+.scheme path.active,
+/*чтобы не светилась когда занята*/
+.scheme path.active:hover {
+  /*занятые места*/
+  fill: #fe8e05;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /*полоска после мест*/
+  max-width: 1024px; /*растояние до легенды*/
+  margin: auto;
+  padding-top: 22px;
+  padding-bottom: 38px;
+}
+.legend-lebel {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  color: rgba(255, 255, 255, 0.5); /*прозрачность для текста */
+}
+.legend svg {
+  margin-right: 15px;
+}
+.price {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /*разбросить элементы по сторонам*/
+}
+.price-lebel {
+  display: block; /*занимант 1 строчку а ценник сваливается вниз*/
+  font-size: 18px;
+  line-height: 21px;
+}
+.price-tag {
+  font-size: 52px;
+  line-height: 61px;
+}
+.button {
+  display: block;
+  background: #fe8e05;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  padding: 24px 52px;
+  text-decoration: none;
+}
