@@ -11,11 +11,16 @@ body {
   margin: auto; /* Контейнер посередине*/
 }
 .header {
-  min-height: 100vh; /*минимальная высота один экран*/
+  /* min-height: 100vh; /*минимальная высота один экран*/
+  padding-bottom: 60px; /*отступ снизу*/
   background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%),
     /*градиент из фигмы*/ url(../img/bg.jpg) no-repeat center top / cover; /*Фоновая картинка.не повторяется.по центру.
   к верхнему краю.на всю ширину*/
 }
+.m-menu {
+  display: none; /*не отображать кнопку меню*/
+}
+
 .navbar /*Навигационная панель*/ {
   display: flex; /*выравнивание в одну строчку шапки*/
   align-items: center; /*Выравнивание по центру*/
@@ -151,23 +156,28 @@ body {
 }
 /*Оформление выпадающего списка*/
 .select {
-  background: rgba(255, 255, 255, 0.15); /*фоновый цвет*/
+  background-color: rgba(255, 255, 255, 0.15); /*фоновый цвет*/
   border: 1px solid rgba(255, 255, 255, 0.5); /*границы*/
   border-radius: 5px; /*скругления*/
-  color: #fff;
+  color: rgb(12, 12, 12);
   padding: 18px; /*отступ сверху и снизу*/
   cursor: pointer; /*курсор на пальчик*/
   margin: 15px;
 }
 .select-cinema {
-  min-width: 470px; /*растянули блок списка кинотеатра*/
+  width: 470px; /*растянули блок списка кинотеатра*/
 }
 /*стили для блока мест*/
 .scheme {
   margin-bottom: 20px; /*отступ для блока*/
   background: rgba(36, 36, 36, 0.18);
   border-radius: 10px; /*фон и скругления подложки под места*/
+  /*overflow-x: auto; /*если переполнение по оси Х, то схема прокручивается по горизонтали. только схема*/
 }
+.scheme-svg/*удалили ширину и высоту. и добавляем правилою что схема уменьшается с величиной экрана*/ {
+  max-width: 1170px;
+}
+
 .scheme path:not(.light) /*для всех кроме экрана*/ {
   fill: rgba(255, 255, 255, 0.2); /*заливка для кресел*/
 }
@@ -193,6 +203,7 @@ body {
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5); /*полоска после мест*/
   max-width: 1024px; /*растояние до легенды*/
+  width: 90%; /*ширина по умолчанию 90%*/
   margin: auto;
   padding-top: 22px;
   padding-bottom: 38px;
@@ -232,4 +243,90 @@ body {
   line-height: 21px;
   padding: 24px 52px;
   text-decoration: none;
+}
+/*подстройка под разные диагонали экрана*/
+@media (max-width: 1200px) {
+  /*ссылка что при изменении экрана контейнер */
+  .container {
+    max-width: 960px;
+  }
+  .select-cinema {
+    width: 100%; /*для блока выбора кинотеатра*/
+  }
+}
+@media (max-width: 992px) {
+  /*ссылка что при изменении экрана контейнер */
+  .container {
+    max-width: 750px;
+  }
+  .session {
+    flex-wrap: wrap; /*при заполнении элемент перескакивает на новую строчку*/
+  }
+  .session-date {
+    flex-basis: 70%; /*блок занимает 70% место. чтобы список кинотеатров и дат перескакивал на новую строчку*/
+    margin-bottom: 40px;
+  }
+  .session-time {
+    order: 2; /*порядок следования блока при сужении экрана*/
+  }
+  .session-cinema {
+    order: 3;
+  }
+  .menu-item {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 650px;
+    width: 90%; /*чтобы по бокам были отступы*/
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    padding: 20px;
+    margin-left: 40px;
+    flex-direction: column;
+    background-color: #621402;
+    z-index: 9; /*перекрывает собой все*/
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden; /*скрыто*/
+    transform: translateX(
+      -100%
+    ); /*Отодвинули меню вверх/ появляется слева меню*/
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .menu-item:not(:last-child) {
+    /*растояние между строчками кроме последнего*/
+    margin-bottom: 10px;
+  }
+  .m-menu {
+    /*кнопка меню*/
+    display: block; /*включение на маленьком экране*/
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .film-discription {
+    margin-right: 30px;
+  }
+  .film {
+    flex-direction: column; /*чтобы кнопка плей перемещалась вниз*/
+  }
+
+  .film-trailer {
+    margin-right: auto;
+    margin-left: 0;
+    margin-top: 40px;
+  }
 }
